@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e6fa;
+            color: #4b2a7d;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #6a4c9c;
+            color: white;
+        }
+
+        header .logo img {
+            height: 40px;
+        }
+
+        header .tabs {
+            display: flex;
+            gap: 15px;
+        }
+
+        header .tabs button {
+            background-color: #7a5ca6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        header .tabs button:hover {
+            background-color: #8c6bbb;
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Materi Section */
+        .Materi {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .Materi > div {
+            width: 30%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .Materi img {
+            width: 100%;
+            border-radius: 10px;
+            min-height: 150px;
+            object-fit: cover;
+        }
+
+        .Materi button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #6a4c9c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .Materi button:hover {
+            background-color: #7a5ca6;
+        }
+
+        /* Hidden Section */
+        .hidden-section {
+            display: none;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 20px;
+            background-color: #d6c5e1;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #6a4c9c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .logo img {
+            height: 40px;
+        }
+
+        footer .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        footer .links a {
+            color: white;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        footer .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <div class="tabs">
+            <button>Materi</button>
+            <button>Latihan Soal</button>
+            <button>Profile</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="computer-book-reading-planning-ideas-students_1418-84.jpg" alt="Hero Image">
+    </div>
+
+    <!-- Materi Section -->
+    <div class="Materi">
+        <!-- Penjumlahan (Addition) -->
+        <div class="materi-card">
+            <img src="preschool-addition-math-worksheet-template_1308-76768 (1).jpg" alt="Materi Penjumlahan">
+            <h2>Materi Pembelajaran Matematika Kelas 1</h2>
+            <h3>Penjumlahan Angka 1-10</h3>
+            <p>Pada materi kali ini, kita akan belajar tentang penjumlahan angka 1 sampai 10. Mari kita mulai dengan contoh sederhana!</p>
+            <h4>Contoh Penjumlahan:</h4>
+            <ul>
+                <li><strong>2 + 3 = 5</strong></li>
+                <li><strong>4 + 1 = 5</strong></li>
+                <li><strong>6 + 2 = 8</strong></li>
+                <li><strong>3 + 5 = 8</strong></li>
+            </ul>
+            <button class="action-btn" id="startAdditionBtn">Mulai Latihan Penjumlahan</button>
+        </div>
+        
+        <!-- Section Latihan Penjumlahan -->
+        <div id="additionExercise" class="hidden-section">
+            <h3>Latihan Penjumlahan:</h3>
+            <ul>
+                <li>5 + 3 = <input type="number" id="question1"></li>
+                <li>7 + 2 = <input type="number" id="question2"></li>
+                <li>4 + 6 = <input type="number" id="question3"></li>
+                <li>9 + 1 = <input type="number" id="question4"></li>
+            </ul>
+            <button class="action-btn" id="submitAnswersBtn">Kirim Jawaban</button>
+            <p id="feedback" class="feedback"></p>
+        </div>
+
+        <!-- Pengenalan Angka 1-10 -->
+        <div class="materi-card">
+            <img src="number-1-worksheet-template_23-2148776929.jpg" alt="Pengenalan Angka 1-10">
+            <h3>Pengenalan Angka 1-10</h3>
+            <p>Ayo belajar mengenal angka-angka dari 1 sampai 10. Angka-angka ini akan menjadi dasar dalam pembelajaran Matematika.</p>
+            <button class="action-btn" id="startNumberRecognitionBtn">Mulai Latihan Angka</button>
+        </div>
+
+        <!-- Section Latihan Pengenalan Angka -->
+        <div id="numberRecognitionExercise" class="hidden-section">
+            <h3>Latihan Pengenalan Angka:</h3>
+            <ul>
+                <li>Kenali angka <strong>1</strong> - <input type="text" id="number1"></li>
+                <li>Kenali angka <strong>2</strong> - <input type="text" id="number2"></li>
+                <li>Kenali angka <strong>3</strong> - <input type="text" id="number3"></li>
+                <li>Kenali angka <strong>4</strong> - <input type="text" id="number4"></li>
+            </ul>
+            <button class="action-btn" id="submitNumberAnswersBtn">Kirim Jawaban</button>
+            <p id="numberFeedback" class="feedback"></p>
+        </div>
+
+        <!-- Latihan Bentuk Geometri -->
+        <div class="materi-card">
+            <img src="vector-memphis-pattern-gray-background_250207-1194 - Copy.jpg" alt="Bentuk Geometri">
+            <h3>Bentuk Geometri</h3>
+            <p>Ayo belajar mengenal berbagai bentuk geometri dasar seperti lingkaran, segitiga, dan persegi.</p>
+            <button class="action-btn" id="startGeometryShapesBtn">Mulai Latihan Bentuk Geometri</button>
+        </div>
+
+        <!-- Section Latihan Bentuk Geometri -->
+        <div id="geometryExercise" class="hidden-section">
+            <h3>Latihan Bentuk Geometri:</h3>
+            <ul>
+                <li>Bentuk dengan empat sisi sama panjang - <input type="text" id="shape1"></li>
+                <li>Bentuk dengan tiga sisi - <input type="text" id="shape2"></li>
+                <li>Bentuk dengan keliling melengkung - <input type="text" id="shape3"></li>
+            </ul>
+            <button class="action-btn" id="submitGeometryAnswersBtn">Kirim Jawaban</button>
+            <p id="geometryFeedback" class="feedback"></p>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <p>Website ini didedikasikan untuk membantu anak-anak belajar Matematika dengan cara yang menyenangkan!</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <div class="links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Latihan Penjumlahan
+        document.getElementById("startAdditionBtn").addEventListener("click", function() {
+            document.getElementById("additionExercise").classList.remove("hidden-section");
+        });
+
+        document.getElementById("submitAnswersBtn").addEventListener("click", function() {
+            const answers = {
+                question1: document.getElementById("question1").value,
+                question2: document.getElementById("question2").value,
+                question3: document.getElementById("question3").value,
+                question4: document.getElementById("question4").value,
+            };
+            let feedback = "Jawaban Anda: ";
+
+            feedback += (answers.question1 === "8" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.question2 === "9" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.question3 === "10" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.question4 === "10" ? "Benar" : "Salah");
+
+            document.getElementById("feedback").textContent = feedback;
+        });
+
+        // Latihan Pengenalan Angka
+        document.getElementById("startNumberRecognitionBtn").addEventListener("click", function() {
+            document.getElementById("numberRecognitionExercise").classList.remove("hidden-section");
+        });
+
+        document.getElementById("submitNumberAnswersBtn").addEventListener("click", function() {
+            const answers = {
+                number1: document.getElementById("number1").value,
+                number2: document.getElementById("number2").value,
+                number3: document.getElementById("number3").value,
+                number4: document.getElementById("number4").value,
+            };
+            let feedback = "Jawaban Anda: ";
+
+            feedback += (answers.number1 === "1" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.number2 === "2" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.number3 === "3" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.number4 === "4" ? "Benar" : "Salah");
+
+            document.getElementById("numberFeedback").textContent = feedback;
+        });
+
+        // Latihan Bentuk Geometri
+        document.getElementById("startGeometryShapesBtn").addEventListener("click", function() {
+            document.getElementById("geometryExercise").classList.remove("hidden-section");
+        });
+
+        document.getElementById("submitGeometryAnswersBtn").addEventListener("click", function() {
+            const answers = {
+                shape1: document.getElementById("shape1").value,
+                shape2: document.getElementById("shape2").value,
+                shape3: document.getElementById("shape3").value,
+            };
+            let feedback = "Jawaban Anda: ";
+
+            feedback += (answers.shape1.toLowerCase() === "persegi" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.shape2.toLowerCase() === "segitiga" ? "Benar" : "Salah") + ", ";
+            feedback += (answers.shape3.toLowerCase() === "lingkaran" ? "Benar" : "Salah");
+
+            document.getElementById("geometryFeedback").textContent = feedback;
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!-- Materi Section -->
+<div id="materi" class="Materi section">
+    <!-- Penjumlahan (Addition) -->
+    <div class="materi-card">
+        <img src="preschool-addition-math-worksheet-template_1308-76768 (1).jpg" alt="Materi Penjumlahan" class="materi-image">
+        <h2>Materi Pembelajaran Matematika Kelas 1</h2>
+        <h3>Penjumlahan Angka 1-10</h3>
+        <p>Pada materi kali ini, kita akan belajar tentang penjumlahan angka 1 sampai 10. Mari kita mulai dengan contoh sederhana!</p>
+        <h4>Contoh Penjumlahan:</h4>
+        <ul>
+            <li><strong>2 + 3 = 5</strong></li>
+            <li><strong>4 + 1 = 5</strong></li>
+            <li><strong>6 + 2 = 8</strong></li>
+            <li><strong>3 + 5 = 8</strong></li>
+        </ul>
+        </ul>
+        <button class="action-btn" id="startAdditionBtn">Mulai Latihan Penjumlahan</button>
+    </div>
+    
+    <!-- Section Latihan Penjumlahan -->
+    <div id="additionExercise" class="hidden-section">
+        <h3>Latihan Penjumlahan:</h3>
+        <ul>
+            <li>5 + 3 = <input type="number" id="question1"></li>
+            <li>7 + 2 = <input type="number" id="question2"></li>
+            <li>4 + 6 = <input type="number" id="question3"></li>
+            <li>9 + 1 = <input type="number" id="question4"></li>
+        </ul>
+        <button class="action-btn" id="submitAnswersBtn">Kirim Jawaban</button>
+        <p id="feedback" class="feedback"></p>
+    <script>
+        // Menunggu tombol "Mulai Latihan Penjumlahan" di klik
+        document.getElementById('startAdditionBtn').addEventListener('click', function() {
+            // Menyembunyikan tombol dan menampilkan latihan soal
+            document.getElementById('additionExercise').style.display = 'block';
+        });
+    
+        // Menunggu tombol "Kirim Jawaban" di klik
+        document.getElementById('submitAnswersBtn').addEventListener('click', function() {
+            // Menyimpan jawaban dari input pengguna
+            const answer1 = document.getElementById('question1').value;
+            const answer2 = document.getElementById('question2').value;
+            const answer3 = document.getElementById('question3').value;
+            const answer4 = document.getElementById('question4').value;
+    
+            let correctAnswers = 0;
+    
+            // Mengecek jawaban pengguna
+            if (answer1 == 8) correctAnswers++;
+            if (answer2 == 9) correctAnswers++;
+            if (answer3 == 10) correctAnswers++;
+            if (answer4 == 10) correctAnswers++;
+    
+            // Menampilkan feedback berdasarkan jumlah jawaban yang benar
+            let feedbackText = '';
+            if (correctAnswers === 4) {
+                feedbackText = 'Selamat! Semua jawaban kamu benar!';
+            } else {
+                feedbackText = `Kamu menjawab ${correctAnswers} dari 4 soal dengan benar. Coba lagi!`;
+            }
+    
+            // Menampilkan feedback
+            const feedbackElement = document.getElementById('feedback');
+            feedbackElement.textContent = feedbackText;
+            feedbackElement.className = correctAnswers === 4 ? 'feedback' : 'feedback error';
+        });
+    </script>
+            
+
+    <!-- Pengenalan Angka 1-10 (Introduction to Numbers 1-10) -->
+    <div class="materi-card">
+        <img src="number-1-worksheet-template_23-2148776929.jpg" alt="Pengenalan Angka 1-10" class="materi-image">
+        <h3>Pengenalan Angka 1-10</h3>
+        <p>Ayo belajar mengenal angka-angka dari 1 sampai 10. Angka-angka ini akan menjadi dasar dalam pembelajaran Matematika.</p>
+        <h4>Angka 1-10:</h4>
+        <ul>
+            <li><strong>1</strong> - Satu</li>
+            <li><strong>2</strong> - Dua</li>
+            <li><strong>3</strong> - Tiga</li>
+            <li><strong>4</strong> - Empat</li>
+            <li><strong>5</strong> - Lima</li>
+            <li><strong>6</strong> - Enam</li>
+            <li><strong>7</strong> - Tujuh</li>
+            <li><strong>8</strong> - Delapan</li>
+            <li><strong>9</strong> - Sembilan</li>
+            <li><strong>10</strong> - Sepuluh</li>
+        </ul>
+        <button class="action-btn" id="startNumberRecognitionBtn">Mulai Latihan Angka</button>
+    </div>
+    
+    <!-- Section Latihan Pengenalan Angka -->
+    <div id="numberRecognitionExercise" class="hidden-section">
+        <h3>Latihan Pengenalan Angka:</h3>
+        <p>Masukkan angka yang sesuai dengan kata di bawah ini:</p>
+        <ul>
+            <li>1 - <input type="number" id="number1"></li>
+            <li>2 - <input type="number" id="number2"></li>
+            <li>3 - <input type="number" id="number3"></li>
+            <li>4 - <input type="number" id="number4"></li>
+        </ul>
+        <button class="action-btn" id="submitNumberAnswersBtn">Kirim Jawaban</button>
+        <p id="numberFeedback" class="feedback"></p>
+    </div>
+    <script>
+        // Menunggu tombol "Mulai Latihan Angka" di klik
+        document.getElementById('startNumberRecognitionBtn').addEventListener('click', function() {
+            // Menyembunyikan tombol dan menampilkan latihan soal
+            document.getElementById('numberRecognitionExercise').style.display = 'block';
+        });
+    
+        // Menunggu tombol "Kirim Jawaban" di klik
+        document.getElementById('submitNumberAnswersBtn').addEventListener('click', function() {
+            // Menyimpan jawaban dari input pengguna
+            const answer1 = document.getElementById('number1').value;
+            const answer2 = document.getElementById('number2').value;
+            const answer3 = document.getElementById('number3').value;
+            const answer4 = document.getElementById('number4').value;
+    
+            let correctAnswers = 0;
+    
+            // Mengecek jawaban pengguna
+            if (answer1 == 1) correctAnswers++;
+            if (answer2 == 2) correctAnswers++;
+            if (answer3 == 3) correctAnswers++;
+            if (answer4 == 4) correctAnswers++;
+    
+            // Menampilkan feedback berdasarkan jumlah jawaban yang benar
+            let feedbackText = '';
+            if (correctAnswers === 4) {
+                feedbackText = 'Selamat! Semua jawaban kamu benar!';
+            } else {
+                feedbackText = `Kamu menjawab ${correctAnswers} dari 4 soal dengan benar. Coba lagi!`;
+            }
+    
+            // Menampilkan feedback
+            const feedbackElement = document.getElementById('numberFeedback');
+            feedbackElement.textContent = feedbackText;
+            feedbackElement.className = correctAnswers === 4 ? 'feedback' : 'feedback error';
+        });
+    </script>
+    
+
+    <!-- Bentuk Geometri Dasar (Basic Geometric Shapes) -->
+    <div class="materi-card">
+        <img src="vector-memphis-pattern-gray-background_250207-1194.jpg" alt="Bentuk Geometri Dasar" class="materi-image">
+        <h3>Bentuk Geometri Dasar</h3>
+        <p>Pada bagian ini, kita akan mengenal bentuk-bentuk geometri dasar. Bentuk-bentuk ini sering kita temui dalam kehidupan sehari-hari.</p>
+        <h4>Bentuk-Bentuk Geometri:</h4>
+        <ul>
+            <li><strong>Lingkaran:</strong> Bentuk bulat tanpa sudut.</li>
+            <li><strong>Persegi:</strong> Bentuk dengan 4 sisi yang sama panjang dan 4 sudut siku-siku.</li>
+            <li><strong>Segitiga:</strong> Bentuk dengan 3 sisi dan 3 sudut.</li>
+            <li><strong>Persegi Panjang:</strong> Bentuk dengan 4 sisi, dua sisi panjang dan dua sisi pendek.</li>
+        </ul>
+        <li>
+            <label for="shape1">Bentuk dengan 4 sisi yang sama panjang dan 4 sudut siku-siku:</label>
+            <select id="shape1">
+                <option value="default">Pilih...</option>
+                <option value="persegi">Persegi</option>
+                <option value="segitiga">Segitiga</option>
+                <option value="lingkaran">Lingkaran</option>
+                <option value="persegi panjang">Persegi Panjang</option>
+            </select>
+        </li>
+        <li>
+            <label for="shape2">Bentuk dengan 3 sisi dan 3 sudut:</label>
+            <select id="shape2">
+                <option value="default">Pilih...</option>
+                <option value="persegi">Persegi</option>
+                <option value="segitiga">Segitiga</option>
+                <option value="lingkaran">Lingkaran</option>
+                <option value="persegi panjang">Persegi Panjang</option>
+            </select>
+        </li>
+        <li>
+            <label for="shape3">Bentuk bulat tanpa sudut:</label>
+            <select id="shape3">
+                <option value="default">Pilih...</option>
+                <option value="persegi">Persegi</option>
+                <option value="segitiga">Segitiga</option>
+                <option value="lingkaran">Lingkaran</option>
+                <option value="persegi panjang">Persegi Panjang</option>
+            </select>
+        </li>
+    </ul>
+    <button class="action-btn" id="submitGeometryAnswersBtn">Kirim Jawaban</button>
+    <p id="geometryFeedback" class="feedback"></p>
+</div>
+
+
+<!-- CSS for improved structure and design -->
+<style>
+    /* General styles for the Materi section */
+    .Materi {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    /* Card style for each materi item */
+    .materi-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 30%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .materi-card img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .materi-card h2, .materi-card h3, .materi-card h4 {
+        color: #4b2a7d;
+    }
+
+    .materi-card ul {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .materi-card ul li {
+        margin: 5px 0;
+    }
+
+    .action-btn {
+        background-color: #6a4c9c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .action-btn:hover {
+        background-color: #7a5ca6;
+    }
+
+</style>
